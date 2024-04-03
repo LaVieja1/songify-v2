@@ -6,4 +6,5 @@
 
 - Astro
 - Svelte
+- React
 - TailwindCSS
