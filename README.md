@@ -8,3 +8,4 @@
 - Svelte
 - React
 - TailwindCSS
+- Typescript
