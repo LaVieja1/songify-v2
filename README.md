@@ -10,3 +10,7 @@
 - TailwindCSS
 - Typescript
 - ShadCn
+
+#### Falta
+
+- Subir tus propias canciones
