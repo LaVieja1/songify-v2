@@ -3,6 +3,7 @@ import MusicsTable from "@/components/MusicsTable.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import { allPlaylists, songs } from "@/lib/data";
+import { CardPlayButton } from "@/components/CardPlayButton";
 
 const { id } = Astro.params;
 
@@ -11,6 +12,10 @@ const playlist = allPlaylists.find((playlist) => playlist.id === id);
 const playListSongs = songs.filter(
   (song) => song.albumId === playlist?.albumId
 );
+
+const totalDuration = playListSongs.reduce((acc, song) => {
+  return acc + parseInt(song.duration);
+}, 0);
 ---
 
 <Layout title="Songify">
@@ -47,12 +52,16 @@ const playListSongs = songs.filter(
             </div>
             <p class="mt-1">
               <span class="text-white">{playListSongs.length} canciones</span>,
-              3 h aproximadamente
+              {totalDuration} mins
             </p>
           </div>
         </div>
       </div>
     </header>
+
+    <div class="pl-6 pt-6">
+      <CardPlayButton id={id} client:load size="large" />
+    </div>
 
     <div class="relative z-10 px-6 pt-10"></div>
 
