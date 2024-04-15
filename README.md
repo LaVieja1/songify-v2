@@ -11,6 +11,8 @@
 - Typescript
 - ShadCn
 
-#### Falta
+#### Roadmap
 
 - Subir tus propias canciones
+- Crear playlists
+- Reproducir otras canciones
